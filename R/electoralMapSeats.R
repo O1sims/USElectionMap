@@ -1,3 +1,5 @@
+workingDir <- "path/to/electionMap/"
+
 # Install necessary packages
 
 packages <- c('devtools', 'purrr', 'dplyr', 'htmlwidgets', 'stringr', 'rvest', 'xml2', 'htmltools')
@@ -187,7 +189,8 @@ electoralMapSeats <- leaflet(options = leafletOptions(
             });
         }
     }")
+
 htmlwidgets::saveWidget(electoralMapSeats,
-                        file = '~/Desktop/electoralMap/electoralMapSeats.html',
+                        file = paste0(workingDir, 'electoralMapSeats.html'),
                         selfcontained = FALSE,
                         libdir = 'js')
